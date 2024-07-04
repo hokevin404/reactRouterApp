@@ -26,7 +26,11 @@ function Price() {
         } catch (error) {
             console.error(error);
         }
-    }
+    };
+
+    useEffect(() => {
+        getCoin();
+    }, []);
 
     return (
         <h1>
