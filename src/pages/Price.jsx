@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 function Price() {
 
     // API Key
-    const apiKey = "DBB7F384-EA45-4F83-A4B91C4BDD3F5559";
+    const apiKey = "DBB7F384-EA45-4F83-A4B9-1C4BDD3F5559";
 
     // Grab currency symbol from URL param
     const params = useParams();
@@ -19,8 +19,8 @@ function Price() {
     // Function to fetch coin data
     async function getCoin() {
         try {
-            const response = fetch(url);
-            const data = response.json();
+            const response = await fetch(url);
+            const data = await response.json();
 
             setCoin(data);
         } catch (error) {
@@ -52,11 +52,7 @@ function Price() {
         return <h1>Loading...</h1>
     };
 
-    return (
-        <h1>
-            This is the Price Component.
-        </h1>
-    )
-}
+    return coin && coin.rate ? loaded() : loading();
+};
 
 export default Price
