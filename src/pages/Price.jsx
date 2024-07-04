@@ -12,6 +12,9 @@ function Price() {
 
     // Using 'params' and symbol' variable to create URL
     const url = `http://rest-sandbox.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
+    
+    // State to hold coin data
+    const [coin, setCoin] = useState('null');
 
     return (
         <h1>
