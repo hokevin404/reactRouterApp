@@ -16,6 +16,18 @@ function Price() {
     // State to hold coin data
     const [coin, setCoin] = useState('null');
 
+    // Function to fetch coin data
+    async function getCoin() {
+        try {
+            const response = fetch(url);
+            const data = response.json();
+
+            setCoin(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <h1>
             This is the Price Component.
