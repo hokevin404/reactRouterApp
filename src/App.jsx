@@ -5,7 +5,7 @@ import Currencies from './pages/Currencies';
 // Import components
 import Nav from './components/Nav';
 // Import modules
-import {Router, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import { useState } from 'react';
 import './App.css'
 
