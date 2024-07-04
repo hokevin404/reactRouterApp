@@ -16,7 +16,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/price' element={<Price />} />
+        <Route path='/price/:symbol' element={<Price />} />
         <Route path='/currencies' element={<Currencies />} />
       </Routes>
     </div>
