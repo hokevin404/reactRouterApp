@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+// import dotenv from "dotenv";
 
 function Price() {
+    // API Key
+    const apiKey = import.meta.env.VITE_apiKey;
 
     // Grab currency symbol from URL param
     const params = useParams();
     const symbol = params.symbol;
 
     // Using 'params' and symbol' variable to create URL
-    const url = `http://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${import.meta.env.VITE_apiKey}`;
+    const url = `http://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
     
     // State to hold coin data
     const [coin, setCoin] = useState('null');
