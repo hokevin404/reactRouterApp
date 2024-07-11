@@ -14,11 +14,11 @@ function Currencies() {
 
     return (
         <div className='currencies'>
-            {currencies.map((coin) => {
+            {currencies.map((coin , i) => {
                 const { name, symbol } = coin;
 
                 return (
-                    <Link to={`/price/${symbol}`}>
+                    <Link to={`/price/${symbol}`} key={i}>
                         <h2>
                             {name}
                         </h2>
